@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Header() {
     return(
-        <header>
+        <header className="fixed">
             <ul className="flex gap-8 justify-end">
                 <li>
                     <Link className="anchor-direction" href="https://www.linkedin.com/in/brustolinsaulo/" target="blank">
