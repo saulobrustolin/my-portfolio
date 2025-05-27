@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --text-color: #4b4b4b;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,8 +15,39 @@
   }
 }
 
-body {
+* {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-dm-sans), Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+li, a, p {
+  @apply text-gray;
+}
+
+@layer components {
+  .list-dot-separator li:not(:last-child)::after {
+    content: "•";
+    margin-left: 0.5rem;
+    font-size: 12px;
+  }
+
+  .anchor-direction::after {
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-color: currentColor;
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>');
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>');
+    mask-repeat: no-repeat;
+    mask-size: contain;
+  }
 }
