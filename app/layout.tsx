@@ -23,7 +23,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </head>
       <body
-        className={`${dmSans.variable} antialiased`}
+        className={`${dmSans.variable} antialiased flex flex-col justify-center items-center`}
       >
         {children}
       </body>
